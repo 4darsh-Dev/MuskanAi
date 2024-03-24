@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
-<body>
-    <h1>Welcome to CodingWorld !</h1>
-</body>
-</html>
+
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Home{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock head %}
+
+{% block main %}
+    
+{% endblock main %}
+
+{% block script %}  
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock script %}
