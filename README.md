@@ -5,9 +5,9 @@
 A digital assitant which has full automation capabilties of Nautral Language Understanding and speech input and output along with Emotional Intelligence and Web Browsing also perform day to day activities like Sending message,answering calls, etc. 
 Uses Fine-Tuned Deep Learning Large Languae Model (LLMs) for Emotional Understading and Question Answering.
 
-<!-- <p align="center">
-  <img src="https://onionreads.com/wp-content/uploads/2024/01/Screenshot-2024-01-15-014420.png" alt="CogniGuard" width="600px" />
-</p> -->
+<p align="center">
+  <img src="https://onionreads.com/wp-content/uploads/2024/03/muskanai-home.png" alt="CogniGuard" width="600px" />
+</p>
 
 ![GitHub code size](https://img.shields.io/github/languages/code-size/4darsh-Dev/MuskanAi?style=plastic)
 ![GitHub contributors](https://img.shields.io/github/contributors/4darsh-Dev/MuskanAi?style=plastic)
