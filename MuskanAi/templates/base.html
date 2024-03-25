@@ -1,66 +1,66 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muskan | {% block title %}{% endblock title %}</title>
     {% block head %}{% endblock head %}
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
-    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static " css/styles.css" %}">
+    <link rel="shortcut icon" href="{% static " img/favicon.ico" %}" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-    <div class="container">
 
-        <video width="100%" height="100vh" autoplay loop  class="intro-video" >
-            <source src="vid/intro-video.mp4" type="video/mp4">
-        </video>
 
-        <header>
-            <section id="navbar">
-    
-                <div class="header-tb">
-    
-                    <nav>
-                        <input type="checkbox" id="check">
+    {% block video %}{% endblock video %}
+
+    <header>
+        <section id="navbar">
+
+            <div class="header-tb">
+
+                <nav>
+                    <input type="checkbox" id="check">
                     <label id="check-label" for="check" class="checkbtn">
                         <i class='bx bx-menu'></i>
-                       
+
                     </label>
-                        <div class="logo">
-                            <h1><a href="/"><img class="logo-img" src="{% static 'img/muskanai-logo.png' %}" 
-                                alt="MuksanAi personal Assistant"><span class="logo-img-span" > MuskanAi </span></a>
-                        <h1>
-                        </div>
-                        <ul class=" menu-list">
-                            
-                            <li> <a class="menu-items" href="/">Home</a> </li>
-        
-                            <li> <a class="menu-items" href="/about">About</a> </li>
-                            <li> <a class="menu-items" href="/services">Features</a> </li>
-                            <li> <a class="menu-items" href="/contact">Contact</a></li>
-                            
-                            <!-- <li> <a  class="menu-items" href="/login">Login</a></li>
+                    <div class="logo">
+                        <h1><a href="/"><img class="logo-img" src="{% static 'img/muskanai-logo.png' %}"
+                                    alt="MuksanAi personal Assistant"><span class="logo-img-span"> MuskanAi </span></a>
+                            <h1>
+                    </div>
+                    <ul class=" menu-list">
+
+                        <li> <a class="menu-items" href="/">Home</a> </li>
+
+                        <li> <a class="menu-items" href="/about">About</a> </li>
+                        <li> <a class="menu-items" href="/services">Features</a> </li>
+                        <li> <a class="menu-items" href="/contact">Contact</a></li>
+
+                        <!-- <li> <a  class="menu-items" href="/login">Login</a></li>
                             <li> <a class="nav-btn" id="nav-signup" href="/signup">Sign Up</a></li> -->
-        
-        
-                        </ul>
-                        <div class="nav-buttons">
-                            <a href="/login" class="nav-login text-none">Login</a>
-                            <a href="#" class="nav-free-trial text-none">Free Trial</a>
-                            <a id="nav-demo" href="#" class="nav-demo text-none"><span id="nav-demo-span"><i class='bx bxs-right-arrow-circle'></i></span> Get A Demo</a>
-                        </div>
-                    </nav>
-    
-                </div>
-                
-            </section>
-        </header>
-        
-    </div>
-    
+
+
+                    </ul>
+                    <div class="nav-buttons">
+                        <a href="/login" class="nav-login text-none">Login</a>
+                        <a href="#" class="nav-free-trial text-none">Free Trial</a>
+                        <a id="nav-demo" href="#" class="nav-demo text-none"><span id="nav-demo-span"><i
+                                    class='bx bxs-right-arrow-circle'></i></span> Get A Demo</a>
+                    </div>
+                </nav>
+
+            </div>
+
+        </section>
+    </header>
+
+
+
     <main>
         {% block main %}{% endblock main %}
     </main>
@@ -69,7 +69,8 @@
 
     </footer>
 
-    
+    <script src="{% static 'js/script.js' %}"></script>
     {% block script %}{% endblock script %}
 </body>
+
 </html>

@@ -3,7 +3,7 @@
 
 :root{
     --blue:#040548;
-    --orange-red:#ee4a4c;
+    --orange-red:#e35500;
     --yellow:#fdb128;
     --white:#fff;
     --black:#171321;
@@ -32,13 +32,18 @@ html {
 
 body{
     background-color: var(--white);
+    color: var(--black);
+    letter-spacing: -.02em;
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130%;
 
 }
-.container{
+/* .container{
     height: 100vh;
     width: 100%;
-    
-}
+     */
 
 @layer header{
     *{
@@ -96,6 +101,7 @@ body{
         display: flex;
         flex-direction: row;
         align-items: center;
+        height: 70px;
 
     }
     
@@ -208,8 +214,8 @@ body{
     }
     
     .menu-items:hover {
-        color: var(--deep-pink);
-        border-bottom: 2px solid var(--deep-pink);
+        color: var(--orange-red);
+        border-bottom: 2px solid var(--orange-red);
     }
     
     .sr-only {
@@ -247,9 +253,9 @@ body{
         transition: all 0.3s ease;
     }
     .nav-demo{
-        background-color: var(--yellow);
+        background-color:var(--orange-red);
         color: var(--white);
-        padding: 0.6rem 1rem;
+        padding: 0.6rem 1.5rem;
         border-radius: 34px;
         font-size: 1rem;
         font-weight: 500;
@@ -264,26 +270,130 @@ body{
 
 }
 
-.intro-video{
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    bottom: 0;
-
-}
-
-@media (min-aspect-ratio: 16/9)
-{
+@layer video{
+    
     .intro-video{
-        width: 100%;
-        height: auto;
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        top: 0;
+
+    }
+
+    @media (min-aspect-ratio: 16/9)
+    {
+        .intro-video{
+            width: 100%;
+            height: auto;
+        }
+    }
+    @media (max-aspect-ratio: 16/9)
+    {
+        .intro-video{
+            width: auto;
+            height: 100%;
+
+        }
     }
 }
-@media (max-aspect-ratio: 16/9)
-{
-    .intro-video{
-        width: auto;
+
+@layer main{
+    main{
+        position: relative;
+        top: 10rem;
         height: 100%;
 
     }
+    .home-div{
+        height: 100%;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .padding-global{
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .position-relative{
+        position: relative;
+        z-index: 10;
+    }
+
+    .home-div-head{
+        /* -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.55));
+        -webkit-background-clip: text; */
+        
+        padding-bottom: .05em;
+        font-size: 7.5rem;
+        padding-bottom: 0.2em;
+    }
+    .center{
+        text-align: center;
+    }
+
+    .flex-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .headline-para{
+        font-size: 4.5rem;
+ 
+        color: rgba(252, 202, 202, 0.5);
+        padding: 2rem 0;
+        height: 112px;
+    }
+    .headline-para span{
+        font-weight: 600;
+        color: var(--orange-red);
+        opacity: 0.8;
+
+    }
+    .home-div-text{
+        padding: 1rem 0;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    .home-div-text-head{
+        font-size: 1.2rem;
+        color: var(--white);
+        /* padding: 1rem 0; */
+        line-height: 125%;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-family: var(--sans);
+
+    }
+    .home-div-free-trial{
+        
+            border: 2px solid var(--orange-red);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 34px;
+            font-size: 1rem;
+            font-weight: 500;
+            /* text-transform: uppercase; */
+            transition: all 0.5s ease;
+            margin-left: 0.2rem;
+            margin-right: 0.5rem;
+    }
+    .home-div-free-trial:hover{
+        background-color: var(--white);
+        color: var(--black);
+        border: none;
+    }
+
+
 }
