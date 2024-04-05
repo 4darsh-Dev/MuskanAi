@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muskan | {% block title %}{% endblock title %}</title>
     {% block head %}{% endblock head %}
-    <link rel="stylesheet" href="{% static " css/styles.css" %}">
-    <link rel="shortcut icon" href="{% static " img/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -48,7 +48,7 @@
                     </ul>
                     <div class="nav-buttons">
                         <a href="/login" class="nav-login text-none">Login</a>
-                        <a href="#" class="nav-free-trial text-none">Free Trial</a>
+                        <a href="/signup" class="nav-free-trial text-none">Free Trial</a>
                         <a id="nav-demo" href="#" class="nav-demo text-none"><span id="nav-demo-span"><i
                                     class='bx bxs-right-arrow-circle'></i></span> Get A Demo</a>
                     </div>
@@ -64,6 +64,7 @@
     <main>
         {% block main %}{% endblock main %}
     </main>
+    <a href="#" class="top flex-center" ><img src="{% static "img/muskanai-transparent.png" %}" alt=""></a>
 
     <footer>
 

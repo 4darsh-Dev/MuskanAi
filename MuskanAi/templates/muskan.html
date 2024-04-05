@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About{% endblock title %}
+
+{% block head %}
+
+{% endblock head %}
+
+{% block main %}
+<h1>Welcome to MuskanAi</h1>
+
+{% if request.user.is_authenticated %}
+
+<p>Hi {{ request.user.username }}!</p>
+<a href="{% url 'logout' %}">logout</a>
+
+{% else %}
+<a href="{% url 'login' %}">login</a> 
+<a href="{% url 'signup' %}">signup</a>
+
+{% endif %}
+
+{% endblock main %}
+
+{% block script %}
+
+
+{% endblock script %}
