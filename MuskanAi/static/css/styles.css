@@ -69,7 +69,8 @@ body{
     }
     
     .logo-img {
-        width: 42px;
+        height: 52px;
+        margin-left: 5px;
     }
 
     .logo-img-span {
@@ -77,7 +78,7 @@ body{
         font-family: var(--mono-head);
         color: var(--white);
         position: relative;
-            top: -10px;
+            top: -17px;
 
     }
 
@@ -268,6 +269,21 @@ body{
     }
 
 
+}
+
+.top{
+    position: fixed;
+  right: 2.2rem;
+  bottom: 2.2rem;
+  background-color: var(--blue);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+
+}
+.top img{
+    max-width: 36px;
+    
 }
 
 @layer video{
