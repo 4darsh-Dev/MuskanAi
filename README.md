@@ -25,6 +25,52 @@ Uses Fine-Tuned Deep Learning Large Languae Model (LLMs) for Emotional Understad
 ![GitHub forks](https://img.shields.io/github/forks/4darsh-Dev/MuskanAi)
 ![GitHub Repo stars](https://img.shields.io/github/stars/4darsh-Dev/MuskanAi)
 
+## Tech Stack 🛠️
+
+- **Front End:** HTML, CSS, JavaScript 
+- **Digital Assitant** Python(pyttsx3,Nltk,PyTorch,pandas,numpy,scikit-learn,transformers)
+- **Backend and API:** Django and REST Framework
+- **Deep Learning LLM** Hugging Face API
+
+## Roadmap 🗺️
+
+### Approach
+1. **Dataset Collection**:
+   - Gather publicly available datasets from sources like Kaggle, Hugging Face, and other repositories.
+   - Create custom-labelled datasets from movie dialogues, social media conversations, video transcripts, and CC content to train the models for specific tasks.
+
+2. **Model Fine-Tuning**:
+   - Fine-tune llama2-7b and BERT models using the collected datasets for sentiment analysis, question answering, and NER tasks.
+   - Implement transfer learning techniques to adapt the models to various contexts and domains.
+
+3. **Contextual Understanding**:
+   - Utilize Q/A datasets containing contextual information with emotional annotations to enhance the models' understanding of emotional context.
+   - Incorporate ontologies to interpret cultural contexts and social relationships influencing emotional expression.
+
+4. **Reinforcement Learning**:
+   - Implement a reinforcement learning mechanism based on user feedback (positive/negative ratings) to continually improve the models' performance in generating responses.
+
+### Workflow
+Our workflow follows a sequential process:
+1. **User Input**: Users provide input queries or statements.
+2. **Intent Recognition**: Determine the intent behind the user input.
+3. **Sentiment Analysis**: Analyze the sentiment of the input.
+4. **Response Generation**: Generate appropriate responses based on the input and sentiment analysis.
+
+### Milestones
+- **Milestone 1**: Dataset Collection and Preprocessing
+- **Milestone 2**: Model Fine-Tuning for Sentiment Analysis
+- **Milestone 3**: Model Fine-Tuning for Question Answering
+- **Milestone 4**: Model Fine-Tuning for Named Entity Recognition
+- **Milestone 5**: Integration of Reinforcement Learning Mechanism
+- **Milestone 6**: Testing and Evaluation
+- **Milestone 7**: Documentation and Finalization
+
+
+## Screenshots 📸
+<p align="center">
+  <img src="https://onionreads.com/wp-content/uploads/2024/04/muskan-sentimental-hparams-ezgif.com-resize.webp" alt="Muskan AI-digital-assitant-by-adarsh-maurya" width="600px" />
+</p>
 
 ## Project Setup Locally 🚀
 
@@ -35,7 +81,7 @@ Uses Fine-Tuned Deep Learning Large Languae Model (LLMs) for Emotional Understad
 git clone https://github.com/4darsh-Dev/MuskanAi.git
 ```
 2. Install python and setup virtual envionment. 
-#### 1. Open terminal in cogniguard folder
+#### 1. Open terminal in MuskanAi folder
 ```bash 
 pip install virtualenv 
 ```
@@ -75,28 +121,6 @@ python manage.py runserver
 ```
 -- Server will be started at localhost (example: http://127.0.0.1:8000/)
 
-
-## Tech Stack 🛠️
-
-- **Front End:** HTML, CSS, JavaScript 
-- **Digital Assitant** Python(pyttsx3,Nltk,PyTorch,pandas,numpy,scikit-learn,transformers)
-- **Backend and API:** Django and REST Framework
-- **Deep Learning LLM** Hugging Face API
-
-
-
-## Features 🌐🔍
-
-
-1. **JavaScript Code Analysis:** Uncover deceptive tactics through DOM manipulation and event listeners.
-2. **Price Manipulation Detection:** Warn users of potential price manipulation and fake urgency.
-3. **Crowdsourced Database:** Contribute to a collaborative platform by reporting dark patterns.
-4. **Misleading Terms & Conditions Detection:** Identify complex terms and potential data leaks.
-5. **Transparency Score Calculation:** Receive website transparency scores for an informed browsing experience.
-
-## Screenshots 📸
-
-[Include screenshots of the extension interface in action.] coming soon.
 
 ## Documentation 📖
 
@@ -142,13 +166,6 @@ git clone https://github.com/4darsh-Dev/MuskanAi
 - **Participate in Discussions:** Engage in discussions related to your PR and address feedback promptly. 💬
 
 By following these guidelines, you contribute to the growth and improvement of CogniGuard. Thank you for your valuable contributions! 🚀
-
-## Roadmap 🗺️
-
-Check out the project's roadmap to understand the planned features, improvements, and future milestones.
-- Creating the MuskanAi Frontend and Api integration.
-- Building Datasets for fine tuning Deep learning Model.
-- Setting up python virtual environment with necessary modules and libraries.
 
 
 ## Code of Conduct 🧑‍💼
