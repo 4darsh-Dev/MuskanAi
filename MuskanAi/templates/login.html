@@ -1,19 +1,38 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | MuskaiAi </title>
+    <link rel="stylesheet"  href="{% static "css/forms.css" %}">
 </head>
 <body>
-    <h1>Login</h1>
+    <!-- <h1>Login</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Login</button>
         <a href="{% url 'signup' %}">Don't have account. Create Now</a>
 
-    </form>
+    </form> -->
     
+    <h1>Login</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-field">
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+        </div>
+        <div class="form-field">
+            <label for="{{ form.password.id_for_label }}">Password:</label>
+            {{ form.password }}
+        </div>
+        <button type="submit">Login</button>
+        <a href="{% url 'signup' %}">Don't have an account? Create Now</a>
+    </form>
+
+
 </body>
 </html>
