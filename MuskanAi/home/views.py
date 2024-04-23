@@ -24,6 +24,9 @@ def loginUser(request):
                 return redirect("muskan")
     else:
         form = LoginForm()
+    
+    print("My login form: ")
+    print(form)
     return render(request, "login.html", {'form':form})
 
 
@@ -39,6 +42,7 @@ def signupUser(request):
         if form.is_valid():
             form.save()
             return redirect('muskan')
+        
     else:
         form = SignUpForm()
     
