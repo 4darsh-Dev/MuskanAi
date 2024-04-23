@@ -1,29 +1,75 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}About{% endblock title %}
-
-{% block head %}
-
-{% endblock head %}
-
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}Muskan Chat {% endblock title %} 
+{% block head %} 
+<link rel="stylesheet" href="{% static "css/muskan.css" %}"> 
+{% endblock head %} 
 {% block main %}
-<h1>Welcome to MuskanAi</h1>
+<div class="main-container">
+    <div class="header">
+        {% if request.user.is_authenticated %}
+        <h1>Welcome to MuskanAi</h1>
+        <p>Hi <span>{{ request.user.username }}</span>!</p>
+        <a class="log-btn" href="{% url 'logout' %}">logout</a>
+    
+        {% else %}
+        <a class="log-btn" href="{% url 'login' %}">login</a>
+        <a class="log-btn" href="{% url 'signup' %}">signup</a>
+    
+        {% endif %}
+    </div>
+    <div class="sub-container">
+  
+      
+  
+      <div class="container">
+          <div class="user-input">
+              <div class="buttons">
+                  <button id="mic-button"><i class='bx bx-microphone'></i></button>
+                  <button id="cross-button"><i class='bx bxs-x-circle'></i></button>
+                  <button id="side-button"><i class='bx bx-sidebar' ></i></button>
+                  <!-- Add your third button here -->
+              </div>
+              <p id="transcript"></p>
+          </div>
+          <div id="assistant" class="assistant">
+              <div class="m-chat">
+                <div class="chat-interface" id="chat-interface"></div>
+              <div class="emotion-container">
+                <div class="emotion-box">
+                    <div class="emotion-label">Happy</div>
+                    <div class="emotion-percentage">80%</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background-color: green;"></div>
+                    </div>
+                </div>
+                <div class="emotion-box">
+                    <div class="emotion-label">Sad</div>
+                    <div class="emotion-percentage">60%</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%; background-color: blue;"></div>
+                    </div>
+                </div>
+                <div class="emotion-box">
+                    <div class="emotion-label">Angry</div>
+                    <div class="emotion-percentage">40%</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%; background-color: red;"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
 
-{% if request.user.is_authenticated %}
+            
+              <img src="images/speaker.png" alt="Speaker icon">
+              <p id="assistant-text"></p>
+          </div>
+      </div>
+    </div>
+  </div>
+  
 
-<p>Hi {{ request.user.username }}!</p>
-<a href="{% url 'logout' %}">logout</a>
-
-{% else %}
-<a href="{% url 'login' %}">login</a> 
-<a href="{% url 'signup' %}">signup</a>
-
-{% endif %}
-
-{% endblock main %}
-
-{% block script %}
-
-
+{% endblock main %} 
+{% block script %} 
+<script src="{% static "js/muskan.js" %}"></script>
 {% endblock script %}
