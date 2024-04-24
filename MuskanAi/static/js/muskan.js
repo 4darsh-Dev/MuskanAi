@@ -45,7 +45,7 @@ sideBtn.addEventListener('click', () => {
     else
     {
 
-        sideBar.style.flex = "0.7";
+        sideBar.style.flex = "0.5";
         sideBar.style.display = "flex";
         sideBtnCond = true;
 
