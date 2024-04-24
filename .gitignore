@@ -2,3 +2,4 @@ myenv/
 MuskanAi/.env
 MuskanAi/static/vid/
 training\muskanai-emotion-analysis-deep-learning.ipynb
+models/
