@@ -4,15 +4,30 @@
 {% block title %}About{% endblock title %}
 
 {% block head %}
-
+<link rel="stylesheet" href="{% static "css/about.css" %}">
 {% endblock head %}
 
 {% block main %}
-<h1>About</h1>
+<h1> About our project</h1>
+<section class="about-section">
+    <h2>Project Overview</h2>
+    <p>
+        Our digital assistant is a cutting-edge AI system designed to revolutionize the way you interact with technology. With full automation capabilities, including Natural Language Understanding, Emotional Intelligence, and Web Browsing, our assistant can seamlessly integrate into your daily life.
+    </p>
+</section>
+<section class="workflow-section">
+    <h2>Workflow</h2>
+    <ol>
+        <li>User Input: Users provide input queries or statements.</li>
+        <li>Intent Recognition: Determine the intent behind the user input.</li>
+        <li>Sentiment Analysis: Analyze the sentiment of the input.</li>
+        <li>Response Generation: Generate appropriate responses based on the input and sentiment analysis.</li>
+    </ol>
+</section>
 
 {% endblock main %}
 
 {% block script %}
 
-
+<script src="{% static "js/about.js" %}"></script>
 {% endblock script %}
