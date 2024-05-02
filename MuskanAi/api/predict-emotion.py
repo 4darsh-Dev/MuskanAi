@@ -1,41 +1,33 @@
 import torch
-from transformers import SqueezeBertTokenizer
-import torch.nn as nn
-import torch.nn.functional as F
+from transformers import SqueezeBertTokenizer, SqueezeBertModel
+from torch.nn.functional import softmax
+from tqdm import tqdm
 
+def load_model(model_path):
+    model = SqueezeBertModel.from_pretrained("squeezebert/squeezebert-uncased")
+    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+    model.eval()
+    return model
 
-class GoEmotionClassifier(nn.Module):
-    def __init__(self, n_train_steps, n_classes, do_prob, bert_model):
-        super(GoEmotionClassifier, self).__init__()
-        self.bert = bert_model
-        self.dropout = nn.Dropout(do_prob)
-        self.out = nn.Linear(768, n_classes)
-        self.n_train_steps = n_train_steps
-        self.step_scheduler_after = "batch"
+def predict_emotions(text, model, tokenizer):
+    inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=40)
+    with torch.no_grad():
+        outputs = model(**inputs)
+        logits = outputs.last_hidden_state.mean(dim=1)
+        probabilities = softmax(logits, dim=1)
+    return probabilities
 
-    def forward(self, ids, mask):
-        output_1 = self.bert(ids, attention_mask=mask)["pooler_output"]
-        output_2 = self.dropout(output_1)
-        output = self.out(output_2)
-        return output
-    
+def main():
+    model_path = "models\emotion_model_epoch_5.pt"
+    model = load_model(model_path)
+    tokenizer = SqueezeBertTokenizer.from_pretrained("squeezebert/squeezebert-uncased")
 
-# Load the saved model
-model = GoEmotionClassifier()  # Initialize your model
-model.load_state_dict(torch.load("F:/backup-kali/codeFiles/projects/MuskanAi/models/emotion_model_epoch_5.pt"))  # Load the saved model weights
+    while True:
+        text = input("Enter text to predict emotions (type 'quit' to exit): ")
+        if text.lower() == 'quit':
+            break
+        probabilities = predict_emotions(text, model, tokenizer)
+        print(probabilities)
 
-# Load the tokenizer
-tokenizer = SqueezeBertTokenizer.from_pretrained("squeezebert/squeezebert-uncased")
-
-# Given text for prediction
-text = "Hi, how are you, I love you too."
-
-# Tokenize the text
-inputs = tokenizer(text, return_tensors="pt", max_length=512, truncation=True)
-
-# Perform prediction
-outputs = model(input_ids=inputs["input_ids"], attention_mask=inputs["attention_mask"])
-predictions = torch.sigmoid(outputs)  # Apply sigmoid activation if needed
-
-print("Predictions:", predictions)
-
+if __name__ == "__main__":
+    main()
