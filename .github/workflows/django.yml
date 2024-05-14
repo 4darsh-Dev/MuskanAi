@@ -27,4 +27,4 @@ jobs:
         pip install -r "MuskanAi/requirements.txt"
     - name: Run Tests
       run: |
-        python manage.py test
+        python "MuskanAi/manage.py" test
