@@ -135,50 +135,6 @@ Detailed documentation on usage, contribution guidelines, and API integration ca
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adarsh-maurya-dev/)
 
 
-## Contributing Guidelines 🤝🚀
-
-
-Thank you for considering contributing to CogniGuard! We welcome your help in making this project even better.
-
-Here are the key points to guide your contributions:
-
-- **Fork the Repository:** Start by forking the CogniGuard repository to your own GitHub account. 🍴
-
-- **Clone the Repository:** Clone the forked repository to your local machine using . 💻
-```bash
-git clone https://github.com/4darsh-Dev/MuskanAi 
-```
-
-- **Create a Branch:** Create a branch for your contributions using a descriptive branch name. 🌿
-
-- **Make Changes:** Implement your changes or additions, ensuring they align with the project's goals. 🚀
-
-- **Testing:** Test your changes thoroughly to ensure functionality and prevent regressions. ✔️
-
-- **Commit Changes:** Commit your changes with clear, concise messages. 💬
-
-- **Create Pull Request:** Push your changes to your forked repository and create a Pull Request (PR) to the main CogniGuard repository. 🎉
-
-- **Follow Code Standards:** Adhere to coding standards and guidelines defined in the project. 📋
-
-- **Provide Detailed PR Description:** Clearly explain the purpose and impact of your PR. 📝
-
-- **Participate in Discussions:** Engage in discussions related to your PR and address feedback promptly. 💬
-
-By following these guidelines, you contribute to the growth and improvement of CogniGuard. Thank you for your valuable contributions! 🚀
-
-
-## Code of Conduct 🧑‍💼
-
-Familiarize yourself with the project's code of conduct to ensure a positive and inclusive community.
-- **Welcome to the CogniGuard Community!** 🚀
-- **Values:** Prioritize inclusivity, respect, collaboration, open-mindedness, and transparency. 🌟
-- **Expected Behavior:** Embrace positive language, constructive criticism, and acknowledgment of efforts. Adhere to guidelines and maintain a respectful tone. 🌈
-- **Unacceptable Behavior:** Prohibit harassment, trolling, personal attacks, and privacy violations. 🚫
-- **Reporting:** Promptly report violations. Investigation includes warnings or removal from the community. 🛡️
-- **Conclusion:** We aim to create a space where everyone feels welcome, valued, and respected. Join us in fostering a positive and collaborative community! 🙌
-
-
 ## Acknowledgments 🙏
 
 We express our gratitude to the incredible individuals who have contributed to the development and success of MuskanAi. 🌟 Your dedication, passion, and insights have played a pivotal role in shaping this project.
