@@ -79,9 +79,10 @@ startConversationButton.addEventListener('click', async () => {
       formData.append('audio', audioBlob, 'recording.webm');
 
       // Send the recorded audio to the backend
-      fetch('/process-audio/', {
+      fetch('http://127.0.0.1:8000/process_audio/', {
         method: 'POST',
         body: formData,
+
       })
         .then((response) => response.json())
         .then((data) => {
