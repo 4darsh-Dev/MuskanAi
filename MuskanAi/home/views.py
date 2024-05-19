@@ -9,6 +9,10 @@ import speech_recognition as sr
 from .models import Conversation, ConversationMessage
 from .utils import process_user_query, convert_text_to_speech
 
+from pydub import AudioSegment
+import tempfile
+
+
 # Create your views here.
 
 def index(request):
@@ -61,47 +65,53 @@ def muskan(request):
     return render(request, "muskan.html")
 
 
-# process audio
-
 @csrf_exempt
 def process_audio(request):
     if request.method == 'POST':
         audio_file = request.FILES.get('audio')
         if audio_file:
-            # Convert audio to text
-            r = sr.Recognizer()
-            with sr.AudioFile(audio_file) as source:
-                audio_data = r.record(source)
-                text = r.recognize_google(audio_data)
+            try:
+                # Convert audio/webm to PCM WAV format
+                with tempfile.NamedTemporaryFile(suffix=".wav", delete=True) as temp_wav_file:
+                    audio = AudioSegment.from_file(audio_file, format="webm")
+                    audio.export(temp_wav_file.name, format="wav")
 
-            # Get the user from the request (assuming you have authentication set up)
-            user = request.user
+                    # Use the speech_recognition library
+                    r = sr.Recognizer()
+                    with sr.AudioFile(temp_wav_file.name) as source:
+                        audio_data = r.record(source)
+                        text = r.recognize_google(audio_data)
 
-            # Get or create a new Conversation instance for the user
-            conversation, created = Conversation.objects.get_or_create(user=user)
+                # Assume the user is authenticated
+                user = request.user
 
-            # Create a new ConversationMessage instance for the user's query
-            user_message = ConversationMessage.objects.create(
-                conversation=conversation,
-                sender='user',
-                message=text
-            )
+                # Get or create a new Conversation instance for the user
+                conversation, created = Conversation.objects.get_or_create(user=user)
 
-            # Generate a response
-            response_text = process_user_query(text)
+                # Create a new ConversationMessage instance for the user's query
+                user_message = ConversationMessage.objects.create(
+                    conversation=conversation,
+                    sender='user',
+                    message=text
+                )
 
-            # Create a new ConversationMessage instance for the bot's response
-            bot_message = ConversationMessage.objects.create(
-                conversation=conversation,
-                sender='bot',
-                message=response_text
-            )
+                # Generate a response
+                response_text = process_user_query(text)
 
-            # Convert the response to speech (optional)
-            audio_file_path = convert_text_to_speech(response_text)
+                # Create a new ConversationMessage instance for the bot's response
+                bot_message = ConversationMessage.objects.create(
+                    conversation=conversation,
+                    sender='bot',
+                    message=response_text
+                )
 
-            return JsonResponse({
-                'response': response_text,
-                'audio_file': audio_file_path
-            })
+                # Optionally, convert the response to speech
+                audio_file_path = convert_text_to_speech(response_text)
+
+                return JsonResponse({
+                    'response': response_text,
+                    'audio_file': audio_file_path
+                })
+            except Exception as e:
+                return JsonResponse({'error': str(e)})
     return JsonResponse({'error': 'Invalid request'})
