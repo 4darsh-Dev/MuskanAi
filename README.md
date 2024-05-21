@@ -86,9 +86,6 @@ git clone https://github.com/4darsh-Dev/MuskanAi.git
 pip install virtualenv 
 ```
 ```bash 
-cd api
-```
-```bash 
 cd MuskanAi
 ```
 ```bash 
