@@ -29,8 +29,8 @@ Uses Fine-Tuned Deep Learning Large Languae Model (LLMs) for Emotional Understad
 
 - **Front End:** HTML, CSS, JavaScript 
 - **Digital Assitant** Python(pyttsx3,Nltk,PyTorch,pandas,numpy,scikit-learn,transformers)
-- **Backend and API:** Django and REST Framework
-- **Deep Learning LLM** Hugging Face API
+- **Backend and API:** Django and Django REST Framework PostgreSQL(SupaBase)
+- **Deep Learning LLM** Hugging Face API (meta-llama3-8b-instruct) model
 
 ## Roadmap 🗺️
 
